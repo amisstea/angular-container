@@ -13,7 +13,6 @@ RUN dnf install -y --setopt=tsflags=nodocs \
     chromium-headless \
     firefox \
     ipa-gothic-fonts \
-    libffi-devel \
     libXt \
     npm \
     && dnf clean all
