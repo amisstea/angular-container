@@ -8,8 +8,7 @@ LABEL maintainer="PnT DevOps Automation - Red Hat, Inc." \
 COPY ca.crt /opt/ca.crt
 
 # Configure the chrome executable for Karma
-ENV CHROME_BIN=chromium-browser
-ENV NODE_EXTRA_CA_CERTS=/opt/ca.crt
+ENV CHROME_BIN=chromium-browser NODE_EXTRA_CA_CERTS=/opt/ca.crt
 
 RUN dnf install -y --setopt=tsflags=nodocs \
     chromium \
