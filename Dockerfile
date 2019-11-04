@@ -13,6 +13,7 @@ ENV CHROME_BIN=chromium-browser NODE_EXTRA_CA_CERTS=/opt/ca.crt
 RUN dnf install -y --setopt=tsflags=nodocs \
     chromium \
     chromium-headless \
+    findutils \
     firefox-66.0.2-1.fc30 \
     ipa-gothic-fonts \
     libXt \
