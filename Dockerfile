@@ -11,8 +11,8 @@ COPY ca.crt /opt/ca.crt
 ENV CHROME_BIN=chromium-browser NODE_EXTRA_CA_CERTS=/opt/ca.crt
 
 RUN dnf install -y --setopt=tsflags=nodocs \
-    chromium-73.0.3683.86-2.fc30 \
-    chromium-headless-73.0.3683.86-2.fc30 \ 
+    chromium-80.0.3987.163-1.fc30 \
+    chromium-headless-80.0.3987.163-1.fc30 \ 
     findutils \
     firefox-66.0.2-1.fc30 \
     ipa-gothic-fonts \
@@ -29,7 +29,7 @@ RUN GECKODRIVER_VERSION="v0.26.0" && \
     chmod +x /usr/local/bin/geckodriver && \
     rm geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz
 
-RUN CHROMEDRIVER_VERSION="73.0.3683.68" && \
+RUN CHROMEDRIVER_VERSION="80.0.3987.106" && \
     wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip && \
     unzip chromedriver_linux64.zip -d /usr/local/bin && \
     chmod +x /usr/local/bin/chromedriver && \
