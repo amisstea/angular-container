@@ -14,7 +14,7 @@ RUN dnf install -y --setopt=tsflags=nodocs \
     chromium-85.0.4183.121-1.fc32 \
     chromium-headless-85.0.4183.121-1.fc32 \ 
     findutils \
-    firefox-82.0-4.fc32 \
+    firefox-82.0-5.fc32 \
     ipa-gothic-fonts \
     libXt \
     npm \
