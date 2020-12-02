@@ -11,25 +11,26 @@ COPY ca.crt /opt/ca.crt
 ENV CHROME_BIN=chromium-browser NODE_EXTRA_CA_CERTS=/opt/ca.crt
 
 RUN dnf install -y --setopt=tsflags=nodocs \
-    chromium-85.0.4183.121-1.fc32 \
-    chromium-headless-85.0.4183.121-1.fc32 \ 
+    chromium-87.0.4280.66-1.fc32 \
+    chromium-headless-87.0.4280.66-1.fc32 \ 
     findutils \
-    firefox-82.0-5.fc32 \
+    firefox-83.0-8.fc32 \
     ipa-gothic-fonts \
     libXt \
     npm \
     wget \
-    unzip\
+    unzip \
+    python3-pip \
     && dnf clean all
 
 # Install webdrivers
-RUN GECKODRIVER_VERSION="v0.27.0" && \
+RUN GECKODRIVER_VERSION="v0.28.0" && \
     wget https://github.com/mozilla/geckodriver/releases/download/$GECKODRIVER_VERSION/geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
     tar -zxf geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz -C /usr/local/bin && \
     chmod +x /usr/local/bin/geckodriver && \
     rm geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz
 
-RUN CHROMEDRIVER_VERSION="86.0.4240.22" && \
+RUN CHROMEDRIVER_VERSION="87.0.4280.20" && \
     wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip && \
     unzip chromedriver_linux64.zip -d /usr/local/bin && \
     chmod +x /usr/local/bin/chromedriver && \
